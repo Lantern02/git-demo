@@ -1,4 +1,4 @@
-#!/bin/bash
+]#!/bin/bash
 
 # Check if Git is installed
 if ! command -v git &> /dev/null; then
@@ -13,3 +13,17 @@ if [ ! -d "$repo_directory"]; then
 	echo "Creating directory: $repo_directory"
 	mkdir "$repo_directory"
 fi
+
+cd "$repo_directory" || exit
+
+# Initialize a new Git repository
+if [ ! -d ".git"]; then
+	git init
+fi
+
+# Add a remote repository and fetch the latest changes
+git_repo_url = "https://github.com/Lantern02/git-demo.git"	# Replace with your Git repo URL
+git remote add origin "$git_repo_url"
+git fetch origin
+
+echo "Repository setup complete. You can now start working oin the $repo_directory directory."
