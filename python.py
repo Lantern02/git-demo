@@ -9,3 +9,5 @@ def install_git():
     print("Git is not installed. Installing Git...")
     subprocess.run(["sudo", "apt-get", "update"])
     subprocess.run(["sudo", "apt-get", "install", "-y", "git"])
+
+print("thank you")
